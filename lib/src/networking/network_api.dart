@@ -37,7 +37,7 @@ class NetworkAPI {
       Map<String, dynamic> headers,
       Map<String, dynamic> postData,
       void completionHandler(
-          bool status, Map<String, dynamic> responseData)) async {
+          bool status, List<Map<String, dynamic>> responseData)) async {
     // var res = await http.get('https://www.google.com');
     // print(res.statusCode);
     var httpHeaders = this.commonHeaders;
