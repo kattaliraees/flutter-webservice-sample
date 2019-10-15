@@ -1,4 +1,4 @@
-# Flutter Webservice, JSON, Data Model, SQLite - Full flow samble
+# Flutter Webservice, JSON, Data Model, SQLite - Full flow sample
 
 
 ## Getting Started
