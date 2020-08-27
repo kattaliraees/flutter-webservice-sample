@@ -4,8 +4,7 @@ import 'package:http/http.dart' as http;
 class NetworkAPI {
 
   final host = "https://www.google.com";
-  Map<String, String> commonHeaders = {'Agent' : 'iPhone', 'App-Version' : '1.0.0'}; //common header proerties for all requests
-
+  Map<String, String> commonHeaders = {'Agent' : 'iPhone', 'App-Version' : '1.0.0'}; //common header properties for all http requests
 
   void httpGetRequest(
       String serviceUrl,
@@ -38,8 +37,7 @@ class NetworkAPI {
       Map<String, dynamic> postData,
       void completionHandler(
           bool status, List<Map<String, dynamic>> responseData)) async {
-    // var res = await http.get('https://www.google.com');
-    // print(res.statusCode);
+
     var httpHeaders = this.commonHeaders;
     if (headers != null) {
       httpHeaders.addAll(headers);
