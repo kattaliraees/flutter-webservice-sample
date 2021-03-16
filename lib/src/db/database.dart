@@ -12,7 +12,7 @@ class PersistentStore {
   
   Database db;
 
-  final PersistentStore defaultStore =  PersistentStore();
+  static final PersistentStore defaultStore =  PersistentStore();
   
   Future<Database> get database async {
     if (db != null) {

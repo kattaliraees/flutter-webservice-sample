@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Webservice Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
@@ -21,7 +21,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Hello"),
       ),
       body: Center(
         child: Text("Flutter Webservice - JSON - SQLite Demo"),

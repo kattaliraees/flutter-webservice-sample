@@ -17,8 +17,8 @@ class NetworkAPI {
       httpHeaders.addAll(headers);
     }
 
-    try {
-      final response = await http.get(this.host + serviceUrl, headers: httpHeaders);
+    try {      
+      final response = await http.get(Uri(path: this.host + serviceUrl), headers: httpHeaders);
       if (response.statusCode == 200) {
         final d = response.body;
         //print('WebServiceRequest - $serviceUrl \n Response - $d');
@@ -44,7 +44,7 @@ class NetworkAPI {
     }
 
     try {
-      final response = await http.post(this.host + serviceUrl,
+      final response = await http.post(Uri(path: this.host + serviceUrl),
           body: json.encode(postData), headers: httpHeaders);
       if (response.statusCode == 200) {
         final d = response.body;
