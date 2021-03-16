@@ -1,4 +1,4 @@
-# Flutter Webservice, JSON, Data Model, SQLite - Full flow sample
+# Flutter Webservice -> JSON -> Data Model-> SQLite - Full flow sample code
 
 
 #### Async network API call example with call back
