@@ -10,11 +10,11 @@ import './user_table.dart';
 
 class PersistentStore {
   
-  Database db;
+  Database? db;
 
   static final PersistentStore defaultStore =  PersistentStore();
   
-  Future<Database> get database async {
+  Future<Database?> get database async {
     if (db != null) {
       return db;
     }

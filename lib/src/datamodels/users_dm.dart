@@ -6,20 +6,20 @@ import '../networking/network_api.dart';
 import '../db/user_table.dart';
 
 class Users  {
-  int userId;
-  String firstName;
-  String lastName;
-  int age;
-  int dateOfBirth;
-  String nationality;
-  int isMarried;
+  int? userId;
+  String? firstName;
+  String? lastName;
+  int? age;
+  int? dateOfBirth;
+  String? nationality;
+  int? isMarried;
 
   static syncUsers () {
 
     NetworkAPI().httpPostRequest('getUsers/', null, {'token': 'tokenId'}, (status, response){
 
       if (status) {
-        for (var user in response) {
+        for (var user in response!) {
           Users u =  Users.fromMap(user);
           Users.insert(u);
         }
@@ -65,7 +65,7 @@ class Users  {
   
   static insert(Users model) async {
 
-    Database db = PersistentStore.defaultStore.db;
+    Database db = PersistentStore.defaultStore.db!;
 
     var query = await db.rawQuery(
       "INSERT OR REPLACE INTO  ${Tables.kUsers}" 
@@ -87,7 +87,7 @@ class Users  {
   
   static update(Users model) async {
 
-    Database db = PersistentStore.defaultStore.db;
+    Database db = PersistentStore.defaultStore.db!;
 
     var result = await db.update("${Tables.kUsers}", model.toMap(),
     where: "${UserTableKeys.kUserId} = ?", whereArgs: [model.userId]);
@@ -95,7 +95,7 @@ class Users  {
   }
 
   static deleteRecord(int id) async {
-    Database db = PersistentStore.defaultStore.db;
+    Database db = PersistentStore.defaultStore.db!;
 
     return db.delete("${Tables.kUsers}", where: "${UserTableKeys.kUserId} = ?", whereArgs: [id]);
   }

@@ -10,11 +10,11 @@ class NetworkAPI {
       String serviceUrl,
       Map<String, dynamic> headers,
       void completionHandler(
-          bool status, List<Map<String, dynamic>> responseData)) async {
+          bool status, List<Map<String, dynamic>>? responseData)) async {
 
     var httpHeaders = this.commonHeaders;
     if (headers != null) {
-      httpHeaders.addAll(headers);
+      httpHeaders.addAll(headers as Map<String, String>);
     }
 
     try {      
@@ -33,14 +33,14 @@ class NetworkAPI {
 
   void httpPostRequest(
       String serviceUrl,
-      Map<String, dynamic> headers,
+      Map<String, dynamic>? headers,
       Map<String, dynamic> postData,
       void completionHandler(
-          bool status, List<Map<String, dynamic>> responseData)) async {
+          bool status, List<Map<String, dynamic>>? responseData)) async {
 
     var httpHeaders = this.commonHeaders;
     if (headers != null) {
-      httpHeaders.addAll(headers);
+      httpHeaders.addAll(headers as Map<String, String>);
     }
 
     try {
